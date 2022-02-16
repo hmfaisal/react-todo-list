@@ -1,0 +1,17 @@
+{
+    "workbench.settings.useSplitJSON": true,
+        "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "eslint.alwaysShowStatus": true,
+        "prettier.disableLanguages": [
+            "js"
+        ]
+}
