@@ -2,7 +2,7 @@
   "name": "list-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000/api",
+  "proxy": "http://localhost:3001/api",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -19,13 +19,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"react-scripts start\" \"json-server --watch ./src/assets/mock-data/todos.json --port 8000\"",
+    "start": "concurrently \"react-scripts start\" \"json-server --watch ./src/assets/mock-data/todos.json --port 3001\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.js'",
     "lint-fix": "npm run lint -- --fix",
-    "server": "json-server --watch ./src/assets/mock-data/todos.json --port 8000"
+    "server": "json-server --watch ./src/assets/mock-data/todos.json --port 3001"
   },
   "jest": {
     "collectCoverageFrom": [
