@@ -25,6 +25,7 @@ https://react-todo-list-app-v1.herokuapp.com/
 # Technology Used
 1. react js
 2. react hooks
-3. MUI(material ui)
-4. json-server
-5. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+3. react context
+4. MUI(material ui)
+5. json-server
+6. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
