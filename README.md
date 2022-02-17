@@ -1,6 +1,6 @@
 # Demo Link
 This project is hosted at heroku.
-[https://react-todo-list-app-v1.herokuapp.com/] https://react-todo-list-app-v1.herokuapp.com/
+https://react-todo-list-app-v1.herokuapp.com/
 
 # About
 
@@ -11,7 +11,7 @@ This project is hosted at heroku.
 # Getting Started
 1. Go to project folder.
 2. for first time run **npm install** or **yarn** to install all dependencies
-3. 3. For this project node v16 or higher is required.
+3. For this project node v16 or higher is required.
 
 # Run Server
 1. run **yarn server** to run the server in localhost
