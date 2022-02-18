@@ -31,7 +31,7 @@ describe("<App />", () => {
         beforeEach(async () => {
             init();
             const items = await screen.findAllByLabelText("edit");
-            fireEvent.click(items[0]);
+            userEvent.click(items[0]);
         })
 
         it('input field has focus', () => {
