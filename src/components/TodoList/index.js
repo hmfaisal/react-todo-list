@@ -15,7 +15,6 @@ function TodoList({ fetchMoreData }) {
 
     return (
         <InfiniteScroll
-            id="todos-scroll"
             dataLength={todos.length}
             next={fetchMoreData}
             hasMore={true}
