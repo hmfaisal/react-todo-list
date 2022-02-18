@@ -11,12 +11,12 @@ function init() {
 }
 
 describe("<App />", () => {
-    test('without data should show loading screen', () => {
+    it('without data should show loading screen', () => {
         init();
         expect(screen.getByTestId("loading")).toBeInTheDocument();
     });
 
-    test('Should fetch only 10 data at first and on scroll Should fetch next 10 data', async () => {
+    it('Should fetch only 10 data at first and on scroll Should fetch next 10 data', async () => {
         init();
         jest.useRealTimers();
         const items = await screen.findAllByTestId("todo-item");
@@ -27,13 +27,21 @@ describe("<App />", () => {
         }, { timeout: 5000 })
     });
 
-    test("onclick edit open dialog and input field has focus", async () => {
-        init();
-        const items = await screen.findAllByLabelText("edit");
-        fireEvent.click(items[0]);
-        expect(screen.getByRole("dialog")).toBeInTheDocument();
-        const inputField = screen.getByLabelText("Title");
-        expect(inputField).toHaveFocus();
-    });
+    describe('It should test single item handling', () => {
+        beforeEach(async () => {
+            init();
+            const items = await screen.findAllByLabelText("edit");
+            fireEvent.click(items[0]);
+        })
+
+        it('input field has focus', () => {
+            const inputField = screen.getByLabelText("Title");
+            expect(inputField).toHaveFocus();
+        })
+
+        it('onclick edit open dialog', () => {
+            expect(screen.getByRole("dialog")).toBeInTheDocument();
+        })
+    })
 
 });
