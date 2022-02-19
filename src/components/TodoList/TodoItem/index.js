@@ -24,7 +24,7 @@ function TodoItem({ item }) {
 
     return (
         <Grid item xs={12} sm={4} >
-            <Card sx={{ boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)" }} >
+            <Card sx={{ boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)" }} data-testid="todo-item">
                 <CardHeader
                     action={
                         <IconButton aria-label="edit" value={item} onClick={handleTodoSelect}>

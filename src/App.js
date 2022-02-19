@@ -13,6 +13,7 @@ import Loading from './components/Loading';
 function App() {
 
   const [loading, setLoading] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
   const [todos, setTodos] = useState([]);
   const [currentTodo, setCurrentTodo] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,12 +21,21 @@ function App() {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    getAllTodosByPage(currentPage).then(res => {
-      setTodos(old => [...old, ...res.data]);
-      setLoading(false);
-    });
+    if (isMounted) {
+      setLoading(true);
+      getAllTodosByPage(currentPage).then(res => {
+        setTodos(old => [...old, ...res.data]);
+        setLoading(false);
+      });
+    }
   }, [currentPage]);
+
+  useEffect(() => {
+    return () => {
+      setTodos([]);
+      setIsMounted(false);
+    }
+}, []);
 
 
   const dispatchUserEvent = (actionType, payload) => {
